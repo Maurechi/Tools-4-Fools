@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_181513) do
     t.text "description"
     t.integer "price"
     t.bigint "user_id", null: false
-    t.bigint "reservation_id", null: false
+    t.bigint "reservation_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["reservation_id"], name: "index_tools_on_reservation_id"

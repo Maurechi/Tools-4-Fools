@@ -5,7 +5,7 @@ class CreateTools < ActiveRecord::Migration[6.0]
       t.text :description
       t.integer :price
       t.references :user, null: false, foreign_key: true
-      t.references :reservation, null: false, foreign_key: true
+      t.references :reservation, foreign_key: true
 
       t.timestamps
     end
