@@ -1,8 +1,30 @@
-<h1>Tools#index</h1>
-
-
-<p>Find me in app/views/tools/index.html.erb</p>
-
+<div class="container">
+<br>
+<h1 class="center-text">What is missing in your Toolkit?</h1>
+<br>
+<br>
 <% if policy(Tool).create? %>
-  <%= link_to "New Tool", new_tool_path %>
+  <%= link_to new_tool_path do %>
+    <p>Rent your own tools  <i class="fas fa-hammer"></i></p>
+    <%end%>
+    <% end %>
+  <div class="cards-grid">
+
+<% @tools.each do |tool| %>
+<div class="card-trip">
+  <img src="https://media.bahag.com/assets/resp_product/26/89/2689213_25046617.jpg" alt="">
+  <div class="card-trip-infos">
+    <div>
+    <h2><%=tool.title.capitalize  %></h2>
+    <p><%= tool.description %></p>
+    </div>
+    <div>
+      <img src="" alt="">
+      <h2 class="">€<%=tool.price  %></h2>
+     <p><%= link_to "See Details", tool_path(tool) %></p>
+    </div>
+  </div>
+</div>
 <% end %>
+  </div>
+</div>

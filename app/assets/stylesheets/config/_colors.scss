@@ -2,9 +2,15 @@
 
 // For example:
 $red: #FD1015;
-$blue: #167FFB;
+$blue: rgba(0, 99, 204, 1);
+$light-blue: rgba(0, 99, 204, 0.2);
 $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;
+
+
+.blue {
+  background-color: $blue;
+}
