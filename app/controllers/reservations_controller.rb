@@ -12,7 +12,8 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     authorize @reservation
     if @reservation.save
-      redirect_to tools_path, notice: "Reservation successful!"
+      redirect_to tools_path
+      flash[:notice] = "Reservation successful!"
     else
       render 'tools/show'
     end
