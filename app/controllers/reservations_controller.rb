@@ -19,6 +19,12 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def index
+    @reservations = policy_scope(Reservation).order(created_at: :desc)
+
+    @all_reservations = current_user.reservations
+  end
+
   private
 
   def set_tool

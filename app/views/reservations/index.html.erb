@@ -1,0 +1,18 @@
+<div class="container" style="text-align: center">
+<h1>Here are your reserved tools</h1>
+<br>
+<br>
+<br>
+<% @all_reservations.each do |rvp| %>
+  <div class="reservation-info">
+    <%= cl_image_tag("qx71g1xf7w9yn1jyazmn", width: 400, height: 300, crop: :fill) %>
+    <h2 ><%= rvp.tool.title.capitalize %></h2>
+    <h4> Starts on: <%= rvp.start %></h4>
+    <h4> Must be returned by: <%= rvp.end %></h4>
+  </div>
+  <br>
+  <br>
+<% end %>
+
+
+</div>
