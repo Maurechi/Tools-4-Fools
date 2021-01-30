@@ -1,5 +1,7 @@
 class ToolsController < ApplicationController
   before_action :set_user, only: :create
+  before_action :set_tool, only: :show
+
   def index
     @tools = policy_scope(Tool).order(created_at: :desc)
   end
@@ -32,5 +34,9 @@ class ToolsController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_tool
+    @tool = Tool.find(params[:id])
   end
 end
