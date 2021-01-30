@@ -9,6 +9,10 @@ class ToolPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   def update?
     record.user == user
   end
@@ -16,11 +20,4 @@ class ToolPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
-  def show?
-    true
-  end
-
-
-
 end
