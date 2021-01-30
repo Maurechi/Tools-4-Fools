@@ -1,0 +1,11 @@
+<div class="container">
+  <br>
+  <br>
+  <br>
+<h2 style="text-align: center;">Please choose the length for renting the <%= tool.title.capitalize  %></h2>
+<%= simple_form_for [tool, reservation] do |f| %>
+<%= f.input :start, as: :date,  html5: true %>
+<%= f.input :end, as: :date, html5: true %>
+<p style="text-align: center;"><%= f.submit%></p>
+<% end %>
+</div>
