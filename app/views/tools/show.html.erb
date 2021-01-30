@@ -1,7 +1,8 @@
 <div class="container">
   <h1>Tool Page for <%= @tool.title.capitalize %></h1>
   <div class="image-container">
-     <img class="image-container" src="https://media.bahag.com/assets/resp_product/26/89/2689213_25046617.jpg" alt="">
+    <%= cl_image_tag("qx71g1xf7w9yn1jyazmn", width: 400, height: 300, crop: :fill) %>
+    <img class="image-container" src="https://media.bahag.com/assets/resp_product/26/89/2689213_25046617.jpg" alt="">
   </div>
   <div class="tool-data">
     <h2 class="center-text">Tool Infomation</h2>
