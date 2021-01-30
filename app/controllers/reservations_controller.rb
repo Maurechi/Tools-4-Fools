@@ -18,12 +18,12 @@ class ReservationsController < ApplicationController
       render 'tools/show'
     end
   end
- # index page should be adding
+
   def index
     @reservations = policy_scope(Reservation).order(created_at: :desc)
-
     @all_reservations = current_user.reservations
   end
+
 
   private
 
