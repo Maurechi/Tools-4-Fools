@@ -1,6 +1,6 @@
 class ToolsController < ApplicationController
   before_action :set_user, only: :create
-  before_action :set_tool, only: :show
+  before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
     @tools = policy_scope(Tool).order(created_at: :desc)
@@ -8,6 +8,7 @@ class ToolsController < ApplicationController
 
   def show
     authorize @tool
+    @reservation = Reservation.new
   end
 
   def new
