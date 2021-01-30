@@ -1,3 +1,4 @@
+
 class ReservationsController < ApplicationController
   before_action :set_tool, only: [:create, :new]
 
@@ -5,7 +6,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
     authorize @reservation
   end
-
+# create
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.tool = @tool
