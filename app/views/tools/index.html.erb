@@ -8,24 +8,35 @@
     <p>Rent your own tools  <i class="fas fa-hammer"></i></p>
     <%end%>
     <% end %>
+
+
+
+
   <div class="cards-grid">
 
-<% @tools.each do |tool| %>
-<div class="card-trip">
-  <img src="https://media.bahag.com/assets/resp_product/26/89/2689213_25046617.jpg" alt="">
-  <div class="card-trip-infos">
-    <div>
-    <h2><%=tool.title.capitalize  %></h2>
-    <p><%= tool.description %></p>
+
+    <% @tools.each do |tool| %>
+    <div class="card-trip">
+
+
+      <img src="https://media.bahag.com/assets/resp_product/26/89/2689213_25046617.jpg" alt="">
+      <div class="card-trip-infos">
+
+        <div>
+          <h2><%=tool.title.capitalize  %></h2>
+          <p><%= tool.description %></p>
+        </div>
+        <div>
+        <img src="" alt="">
+            <h2 class="">€<%=tool.price  %></h2>
+            <p><%= link_to "See Details", tool_path(tool) %></p>
+            <p><%= link_to "Reserve", new_tool_reservation_path(tool) %></p>
+        </div>
+
+
+        </div>
     </div>
-    <div>
-      <img src="" alt="">
-      <h2 class="">€<%=tool.price  %></h2>
-     <p><%= link_to "See Details", tool_path(tool) %></p>
-     <p><%= link_to "Reserve", new_tool_reservation_path(tool) %></p>
-    </div>
+    <% end %>
   </div>
-</div>
-<% end %>
-  </div>
+
 </div>

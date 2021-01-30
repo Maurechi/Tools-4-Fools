@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(version: 2021_01_26_181513) do
   enable_extension "plpgsql"
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "start"
-    t.integer "end"
+    t.datetime "start"
+    t.datetime "end"
     t.integer "total_price"
     t.string "status"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "tools_id", null: false
-    t.index ["tools_id"], name: "index_reservations_on_tools_id"
+    t.bigint "tool_id"
+    t.index ["tool_id"], name: "index_reservations_on_tool_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_181513) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "reservations", "tools", column: "tools_id"
+  add_foreign_key "reservations", "tools"
   add_foreign_key "reservations", "users"
   add_foreign_key "tools", "reservations"
   add_foreign_key "tools", "users"
