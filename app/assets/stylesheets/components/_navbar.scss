@@ -1,3 +1,10 @@
+.navigation {
+  background-color: $blue;
+  a {
+  color: $gray;
+  }
+}
+
 #brand {
   font-weight: bold;
 }
@@ -15,6 +22,4 @@
   width: 40px;
 }
 
-a {
-  color: $green;
-}
+
