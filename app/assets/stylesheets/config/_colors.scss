@@ -1,6 +1,7 @@
 // Define variables for your color scheme
 
 // For example:
+
 $red: #CC1800;
 $blue: #0D3B66;
 $light-blue: rgba(0, 99, 204, 0.2);
@@ -13,4 +14,8 @@ $light-gray: #F5F5F5;
 
 .blue {
   background-color: $blue;
+}
+
+.center {
+  text-align: center;
 }
