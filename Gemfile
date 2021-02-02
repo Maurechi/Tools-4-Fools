@@ -34,6 +34,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pundit'
 gem 'cloudinary'
+gem 'geocoder'
+
 
 group :development, :test do
   gem 'pry-byebug'
