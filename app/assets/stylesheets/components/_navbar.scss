@@ -1,13 +1,48 @@
 .navigation {
-  background-color: $light-blue;
+  background-color: $blue;
+  height: 60px;
+  color: $light-gray;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.nav-left {
+  width: 300px;
+  ul > li {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 16px;
+  }
+  ul {
+    padding-left: 50px;
+    margin: 0;
+  }
   a {
-  color: $gray;
+    color: $light-gray;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
-#brand {
-  font-weight: bold;
+.nav-center {
+  width: 200px;
+  text-align: center;
+  p {
+    font-size: 24px;
+    font-weight: 700;
+    color: $light-gray;
+    margin: 0;
+  }
 }
+
+.nav-right {
+  width: 300px;
+  text-align: right;
+  margin-right: 50px;
+}
+
+
 
 .navbar-lewagon {
   justify-content: space-between;

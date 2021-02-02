@@ -17,6 +17,32 @@
 @import "pages/index";
 
 h1 {
-  font-family: "Merriweather Sans", "sans-serif";
+  font-family: $headers-font;
+  font-size: 48px;
+  font-weight: 600;
+  color: $gray;
+}
+
+h2{
+  font-family: $headers-font;
+  font-size: 24;
+  font-weight: 600;
+  color: $gray;
+}
+
+p {
+  font-family: $body-font;
+  font-size: 16px;
+  font-weight: 400;
+  color: $gray;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    color: $light-gray;
+    text-decoration: none;
+  }
 }
 

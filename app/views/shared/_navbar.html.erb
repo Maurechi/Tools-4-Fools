@@ -1,21 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light navigation justify-content-between">
-  <div class="d-flex">
-    <%= link_to 'TOOLS-4-FOOLS', root_path, class: 'navbar-brand', id: 'brand' %>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to 'Find tools', tools_path%>
-        </li>
-      </ul>
-    </div>
+<nav class="navigation d-flex justify-content-between align-items-center">
+  <div class="nav-left">
+    <ul>
+      <li>
+        <%= link_to 'Home', root_path %>
+      </li>
+      <li>
+        <%= link_to 'Find tools', tools_path %>
+      </li>
+    </ul>
   </div>
-  <div>
+  <div class="nav-center">
+    <p>Tools<span style='font-size:1.5em; color: #CC1800'> 4 </span>Fools</p>
+  </div>
+  <div class="nav-right">
     <% if user_signed_in? %>
-      <%= link_to 'Manage my reservations', reservations_path, class: 'btn btn-info' %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-info' %>
+      <%= link_to 'Manage my reservations', reservations_path, class: 'button-red mr-3' %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button-border-red' %>
     <% else %>
-      <%= link_to 'Register', new_user_registration_path, class: 'btn btn-secondary mr-3' %>
-      <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-info' %>
+      <%= link_to 'Register', new_user_registration_path, class: 'button-red mr-3' %>
+      <%= link_to 'Sign in', new_user_session_path, class: 'button-border-red' %>
     <% end %>
   </div>
 </nav>
