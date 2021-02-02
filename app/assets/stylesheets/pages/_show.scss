@@ -1,8 +1,69 @@
 // Specific CSS for your show-page
+.show-wrapper {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+
+}
+
 .image-container {
   width: 100px;
 }
 
 .reservation-container a {
   color: white;
+}
+
+.show-head {
+  text-align: center;
+  margin-bottom: 5em;
+  border-bottom: solid gray 1px;
+}
+
+.show-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 0.3fr;
+    grid-column-gap: 3.5em;
+}
+
+.description-box {
+  text-align: left;
+  padding: 30px;
+  background: #E5E5E5;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  p {
+    font-size: 16px;
+  }
+  i {
+    font-size: 40px;
+  }
+}
+
+.box-top {
+  border-bottom: solid black 1px;
+  h4 {
+    font-size: 24px;
+    color: $blue;
+  }
+}
+
+.box-bottom {
+  padding-top: 2em;
+  line-height: 3em;
+  p {
+  color: $blue;
+  }
+}
+
+.reservation-container {
+  height: 70%;
+  background: #0D3B66;
+  p {
+    color: white;
+  }
+  color: white;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 }
