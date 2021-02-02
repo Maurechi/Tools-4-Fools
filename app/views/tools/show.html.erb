@@ -1,44 +1,51 @@
-<div class="container">
+<div class="show-wrapper">
+<br>
+  <div class="show-head">
+  <h1><%= @tool.title.capitalize %></h1>
+  <br>
+  </div>
 
-  <h1 class="center-text">Tool Page for <%= @tool.title.capitalize %></h1>
 
-  <div class="container">
-    <div class="d-flex justify-content-between">
-      <div class="col-sm">
-        <%= cl_image_tag("qx71g1xf7w9yn1jyazmn", width: 400, height: 300, crop: :fill) %>
-        <img class="image-container" src="https://media.bahag.com/assets/resp_product/26/89/2689213_25046617.jpg" alt="">
+  <div class="show-grid">
+      <div class="">
+        <div style="height: 50%"> <%= cl_image_tag("qx71g1xf7w9yn1jyazmn", width: 400, height: 200, crop: :fill) %></div>
+        <div id="map"
+     style="width: 100%; height: 50%;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
-      <div class="col-sm">
-        <h2 class="center-text">Tool Infomation</h2>
-        <h3 class="center-text">Type: <%= @tool.title.capitalize %></h3>
-        <p class="center-text"><strong>Description:</strong> <%= @tool.description.capitalize %></p>
-        <p class="center-text"><strong>Price:</strong> <%= @tool.price %></p>
+      <div class="description-box">
+        <div class="box-top">
+          <h4 class="center-text">Description</h4>
+          <br>
+          <p class=""><%= @tool.description.capitalize %></p>
+          <br>
+          <br>
+        </div>
+        <br>
+      <div class="box-bottom">
+
+        <p><strong><i class="fas fa-map-marked-alt"></i></strong>&nbsp &nbsp<%= @tool.address.capitalize %></p>
+        <p><i class="fas fa-user"></i>&nbsp &nbsp<%= @tool.user.email %></p>
       </div>
-      <div class="col-sm">
-        <h2 class="center-text">User Infomation</h2>
-        <h3 class="center-text"><%= @tool.user.email %></h3>
       </div>
-    </div>
+      <div class="reservation-container">
+        <%= simple_form_for [@tool, @reservation] do |f| %>
+        <%= f.input :start, as: :date,  html5: true %>
+        <%= f.input :end, as: :date, html5: true %>
+        <%= f.submit "Book", {class: 'button-red'}%>
+          <% end %>
+      </div>
   </div>
-
-  <div class="container tool-data">
-    <div class="row">
-
-    </div>
-  </div>
-
-  <div class="container user-data">
-    <div class="row">
-
-    </div>
-  </div>
-
-  <div class="container reservation-container">
-    <h2>Reserve This Tool</h2>
-    <button class="reservation-container btn btn-primary" type="button">
-      <%= link_to "Reserve Tool", new_tool_reservation_path(@tool) %>
-    </button>
-  </div>
-
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
