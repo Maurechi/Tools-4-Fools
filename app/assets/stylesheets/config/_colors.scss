@@ -3,7 +3,7 @@
 // For example:
 $red: #FD1015;
 $blue: rgba(0, 99, 204, 1);
-$light-blue: rgba(0, 99, 204, 0.2);
+$light-blue: rgba(0, 99, 204, 0.4);
 $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
@@ -13,4 +13,8 @@ $light-gray: #F4F4F4;
 
 .blue {
   background-color: $blue;
+}
+
+.center {
+  text-align: center;
 }

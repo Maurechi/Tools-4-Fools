@@ -25,7 +25,8 @@ tools = %w(hammer drill chainsaw pliers showel)
       description: Faker::Hipster.sentence,
       title: tools.sample,
       price: rand(5..100),
-      user_id: user.id
+      user_id: user.id,
+      address: %w(mitte kreuzberg tempelhof neukolln moabit schoneberg wilmersdorf wedding rummelsburg planterwald friedrichshain gesundbrunnen prenzlauer-berg charlottenburg grunewald baumschulenweg).sample
     )
     tool.save!
     puts "#{tool.title} tool created"
