@@ -3,14 +3,18 @@ class ToolsController < ApplicationController
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tools = policy_scope(Tool).order(created_at: :desc)
+    if params[:query].present?
+      @tools = policy_scope(Tool).where(title: params[:query])
+    else
+      @tools = policy_scope(Tool).order(created_at: :desc)
+    end
+
     @markers = @tools.geocoded.map do |tool|
       {
         lat: tool.latitude,
         lng: tool.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { tool: tool }),
         image_url: helpers.asset_url("marker")
-
       }
     end
   end
