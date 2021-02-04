@@ -36,8 +36,8 @@
     <div class="card-trip">
 
       <%= link_to tool_path(tool) do  %>
-      <img src="https://media.bahag.com/assets/resp_product/26/89/2689213_25046617.jpg" alt="">
-      <% end %>
+      <%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
       <div class="card-trip-infos">
 
         <div>
