@@ -1,2 +1,17 @@
-<h1>Tools#new</h1>
-<p>Find me in app/views/tools/new.html.erb</p>
+<div class="container">
+    <h1>Be a fool and create a tool!</h1>
+    <p>Create a tool you want to rent out to locals.</p>
+</div>
+<div class="container">
+  <%= simple_form_for(@tool) do |f| %>
+    <%= f.input :title, label: 'Enter title.' %>
+    <%= f.input :description, label: 'Enter description.' %>
+    <%= f.label :price, label: 'Enter price.'%><br>
+    <%= f.number_field :price %>
+    <%= f.input :address, label: 'Enter address.' %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, value: 'Create tool!', class: 'btn btn-large btn-danger' %>
+  <% end %>
+</div>
+
+
