@@ -3,6 +3,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'mapbox-gl/dist/mapbox-gl.css';
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -11,10 +12,6 @@
 
 // Your CSS partials
 @import "components/index";
-@import "components/card";
-@import "components/center";
-@import "components/button";
-@import "components/popup";
 @import "pages/index";
 
 h1 {
