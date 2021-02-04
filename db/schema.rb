@@ -37,15 +37,15 @@ ActiveRecord::Schema.define(version: 2021_02_02_181002) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.datetime "start"
-    t.datetime "end"
+    t.integer "start"
+    t.integer "end"
     t.integer "total_price"
     t.string "status"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "tool_id"
-    t.index ["tool_id"], name: "index_reservations_on_tool_id"
+    t.bigint "tools_id", null: false
+    t.index ["tools_id"], name: "index_reservations_on_tools_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -54,11 +54,13 @@ ActiveRecord::Schema.define(version: 2021_02_02_181002) do
     t.text "description"
     t.integer "price"
     t.bigint "user_id", null: false
+    t.bigint "reservation_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.index ["reservation_id"], name: "index_tools_on_reservation_id"
     t.index ["user_id"], name: "index_tools_on_user_id"
   end
 
@@ -76,7 +78,8 @@ ActiveRecord::Schema.define(version: 2021_02_02_181002) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "reservations", "tools"
+  add_foreign_key "reservations", "tools", column: "tools_id"
   add_foreign_key "reservations", "users"
+  add_foreign_key "tools", "reservations"
   add_foreign_key "tools", "users"
 end
