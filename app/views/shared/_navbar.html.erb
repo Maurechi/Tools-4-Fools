@@ -17,7 +17,7 @@
   </div>
   <div class="nav-right">
     <% if user_signed_in? %>
-      <%= link_to 'Manage my reservations', reservations_path, class: 'button-red mr-3' %>
+      <%= link_to 'My tools', reservations_path, class: 'button-red mr-3' %>
       <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button-border-red' %>
     <% else %>
       <%= link_to 'Register', new_user_registration_path, class: 'button-red mr-3' %>

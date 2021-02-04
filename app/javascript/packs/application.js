@@ -24,8 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-// CSS
-// import 'mapbox-gl/dist/mapbox-gl.css';
+
 
 
 

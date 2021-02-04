@@ -2,7 +2,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "mapbox-gl/dist/mapbox-gl";
+@import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Graphical variables
 @import "config/fonts";
@@ -13,6 +13,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  padding-top: 70px;
+  z-index: -1;
+}
 
 h1 {
   font-family: $headers-font;
