@@ -1,23 +1,30 @@
-<div class="banner">
-  <div class="container">
-    <h1>Be a fool and rent a tool</strong>!</h1>
+<div class="banner d-flex align-items-center">
+  <div class="banner-content">
+    <h1>Be a fool and rent a tool!</h1>
     <p>Renting tools from locals foolishly cheap!</p>
-    <%= link_to 'Find offers', tools_path, class: 'btn btn-primary' %>
+    <div class="banner-search">
+      <%= form_tag tools_path, method: :get, class: "form-inline d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control flex-fill",
+        placeholder: "Find a tool"
+      %>
+      <%= submit_tag "Search", class: "button-red" %>
+    </div>
+  <% end %>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm info">
-      <i class="fas fa-tools"></i>
-      <h3>Good tools</h3>
-    </div>
-    <div class="col-sm info">
-      <i class="fas fa-tools"></i>
-      <h3>Good offers</h3>
-    </div>
-    <div class="col-sm info">
-      <i class="fas fa-tools"></i>
-      <h3>Nearby</h3>
-    </div>
+<div class="container d-flex justify-content-between">
+  <div class="info">
+    <i class="fas fa-tools"></i>
+    <h3>Good tools</h3>
+  </div>
+  <div class="info">
+    <i class="fas fa-map-marked-alt"></i>
+    <h3>Nearby</h3>
+  </div>
+  <div class="info">
+    <i class="fas fa-hand-holding-usd"></i>
+    <h3>Great offers</h3>
   </div>
 </div>
