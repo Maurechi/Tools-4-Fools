@@ -25,7 +25,7 @@ class ToolsController < ApplicationController
     @markers = {
       lat: @tool.latitude,
       lng: @tool.longitude,
-      image_url: helpers.asset_url("marker")
+      image_url: helpers.asset_url("marker.png")
     }
   end
 
