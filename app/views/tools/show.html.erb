@@ -8,7 +8,7 @@
 
   <div class="show-grid">
       <div class="">
-        <div style="height: 50%"> <%= cl_image_tag("qx71g1xf7w9yn1jyazmn", width: 400, height: 200, crop: :fill) %></div>
+        <div style="height: 50%"> <%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %></div>
         <div id="map"
      style="width: 100%; height: 50%;"
      data-markers="<%= @markers.to_json %>"
