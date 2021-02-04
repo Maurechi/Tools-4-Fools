@@ -26,7 +26,7 @@ class ToolsController < ApplicationController
       lat: @tool.latitude,
       lng: @tool.longitude,
       image_url: helpers.asset_url("marker")
-        }
+    }
   end
 
   def new
