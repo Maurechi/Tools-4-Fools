@@ -14,7 +14,7 @@ class ToolsController < ApplicationController
         lat: tool.latitude,
         lng: tool.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { tool: tool }),
-        image_url: helpers.asset_url("marker")
+        image_url: helpers.asset_url("marker.png")
       }
     end
   end
