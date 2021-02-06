@@ -22,11 +22,11 @@ class ToolsController < ApplicationController
   def show
     authorize @tool
     @reservation = Reservation.new
-    @markers = {
+    @marker = [{
       lat: @tool.latitude,
       lng: @tool.longitude,
       image_url: helpers.asset_url("marker.png")
-    }
+    }]
   end
 
   def new

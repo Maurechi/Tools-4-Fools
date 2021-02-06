@@ -15,17 +15,8 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-<br>
-<h1 class="center-text">Find your tool</h1>
-<br>
-<br>
+<h1 class="title-container">Find your tool</h1>
 <div class="container">
-<% if policy(Tool).create? %>
-  <%= link_to new_tool_path do %>
-    <p class="btn btn-variant">Rent your own tools  <i class="fas fa-hammer"></i></p>
-    <%end%>
-  <% end %>
-
   <div class="cards-grid">
     <% @tools.each do |tool| %>
       <div class="card-trip">
