@@ -16,7 +16,7 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 <br>
-<h1 class="center-text">What is missing in your Toolkit?</h1>
+<h1 class="center-text">Find your tool</h1>
 <br>
 <br>
 <div class="container">
@@ -42,10 +42,10 @@
         <div>
           <h2 class=""><%=tool.title.capitalize  %></h2>
           <p><%= tool.description %></p>
-          <p><strong><%= tool.address.capitalize %></strong></p>
         </div>
         <div>
-          <h2 class="center">€<%=tool.price  %>/day</h2>
+          <h2 class="card-price center">€<%=tool.price  %>/day</h2>
+          <p><strong><%= tool.address.capitalize %></strong></p>
         </div>
 
 

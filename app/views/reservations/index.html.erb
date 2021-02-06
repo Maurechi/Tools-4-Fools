@@ -4,11 +4,15 @@
   </div>
   <% @all_reservations.each do |rvp| %>
 
-    <div class="horizontal-card center">
-      <%= cl_image_tag("qx71g1xf7w9yn1jyazmn", width: 300, height: 180, crop: :fill) %>
+    <div class="horizontal-card">
+          <% if rvp.tool.photo.attached? %>
+            <%= cl_image_tag rvp.tool.photo.key, width: 300, height: 180, crop: :fill%>
+          <% else %>
+            <%= cl_image_tag("qx71g1xf7w9yn1jyazmn", width: 300, height: 180, crop: :fill) %>
+          <% end %>
         <table class="card-rvp-info">
           <tr class="table-head">
-            <th><%= rvp.tool.title.capitalize %></th>
+            <th class="tool-name"><%= rvp.tool.title.capitalize %></th>
             <th><i class="far fa-calendar-alt"></i></th>
             <th><i class="fas fa-map-marked-alt"></i></th>
             <th><i class="fas fa-user-check"></i></th>
@@ -20,7 +24,7 @@
             </td>
             <td><%= rvp.tool.address.capitalize %></td>
             <td><%= rvp.status || "Pending" %></td>
-            <td class="horizontal-card-price"><%= rvp.tool.price %>€</td>
+            <td class="card-price"><%= rvp.tool.price %>€</td>
           </tr>
         </table>
     </div>
@@ -38,7 +42,11 @@
       <% @all_tools.each do |tool| %>
       <div class="card-trip">
         <%= link_to tool_path(tool) do  %>
-        <img src="https://media.bahag.com/assets/resp_product/26/89/2689213_25046617.jpg" alt="">
+          <% if tool.photo.attached? %>
+            <%= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= cl_image_tag "tool_default_index.jpg" %>
+          <% end %>
         <% end %>
         <div class="card-trip-infos">
           <div>
@@ -46,7 +54,7 @@
             <p><%= tool.description %></p>
           </div>
           <div>
-            <h2 class="center">€<%=tool.price  %>/day</h2>
+            <h2 class="card-price center">€<%=tool.price  %>/day</h2>
             <p class="card-location"><strong><%= tool.address.capitalize %></strong></p>
           </div>
         </div>
