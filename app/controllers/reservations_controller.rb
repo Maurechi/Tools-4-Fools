@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     authorize @reservation
     if @reservation.save
-      redirect_to tools_path
+      redirect_to reservations_path
       flash[:notice] = "Reservation successful!"
     else
       render 'tools/show'
@@ -23,6 +23,7 @@ class ReservationsController < ApplicationController
   def index
     @reservations = policy_scope(Reservation).order(created_at: :desc)
     @all_reservations = current_user.reservations
+    @all_tools = Tool.where(user_id: current_user)
   end
 
 

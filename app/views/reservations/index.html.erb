@@ -1,18 +1,66 @@
-<div class="container" style="text-align: center">
-<h1>Here are your reserved tools</h1>
-<br>
-<br>
-<br>
-<% @all_reservations.each do |rvp| %>
-  <div class="reservation-info">
-    <%= cl_image_tag("qx71g1xf7w9yn1jyazmn", width: 400, height: 300, crop: :fill) %>
-    <h2 ><%= rvp.tool.title.capitalize %></h2>
-    <h4> Starts on: <%= rvp.start %></h4>
-    <h4> Must be returned by: <%= rvp.end %></h4>
+<div class="rvp-wrapper">
+  <div class="rvp-section-title">
+  <h1 style="text-align: center">Reservations</h1>
   </div>
-  <br>
-  <br>
-<% end %>
+  <% @all_reservations.each do |rvp| %>
 
+    <div class="horizontal-card">
+          <% if rvp.tool.photo.attached? %>
+            <%= cl_image_tag rvp.tool.photo.key, width: 300, height: 180, crop: :fill%>
+          <% else %>
+            <%= cl_image_tag("qx71g1xf7w9yn1jyazmn", width: 300, height: 180, crop: :fill) %>
+          <% end %>
+        <table class="card-rvp-info">
+          <tr class="table-head">
+            <th class="tool-name"><%= rvp.tool.title.capitalize %></th>
+            <th><i class="far fa-calendar-alt"></i></th>
+            <th><i class="fas fa-map-marked-alt"></i></th>
+            <th><i class="fas fa-user-check"></i></th>
+            <th><i class="fas fa-euro-sign"></i></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= rvp.start.strftime("%F") %><br> - <br> <%= rvp.end.strftime("%F") %>
+            </td>
+            <td><%= rvp.tool.address.capitalize %></td>
+            <td><%= rvp.status || "Pending" %></td>
+            <td class="card-price"><%= rvp.tool.price %>€</td>
+          </tr>
+        </table>
+    </div>
+      <% end %>
+
+
+  <div class="rvp-section-title">
+  <h1 style="text-align: center; margin-top: 1em;">Your Tools</h1>
+  </div>
+  <p class="center-text"><%= link_to "Add new", new_tool_path, class: "button-red" %></p>
+  <br>
+  <br>
+  <br>
+  <div class="rvp-cards-grid">
+      <% @all_tools.each do |tool| %>
+      <div class="card-trip">
+        <%= link_to tool_path(tool) do  %>
+          <% if tool.photo.attached? %>
+            <%= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= cl_image_tag "tool_default_index.jpg" %>
+          <% end %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2 class=""><%=tool.title.capitalize  %></h2>
+            <p><%= tool.description %></p>
+          </div>
+          <div>
+            <h2 class="card-price center">€<%=tool.price  %>/day</h2>
+            <p class="card-location"><strong><%= tool.address.capitalize %></strong></p>
+          </div>
+        </div>
+      </div>
+        <% end %>
+    </div>
 
 </div>
+
