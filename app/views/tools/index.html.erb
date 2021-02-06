@@ -26,18 +26,17 @@
     <%end%>
   <% end %>
 
-
-
-
   <div class="cards-grid">
-
-
     <% @tools.each do |tool| %>
-    <div class="card-trip">
+      <div class="card-trip">
+        <%= link_to tool_path(tool) do  %>
+          <% if tool.photo.attached? %>
+            <%= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= cl_image_tag "tool_default_index.jpg" %>
+          <% end %>
+        <% end %>
 
-      <%= link_to tool_path(tool) do  %>
-      <img src="https://media.bahag.com/assets/resp_product/26/89/2689213_25046617.jpg" alt="">
-      <% end %>
       <div class="card-trip-infos">
 
         <div>
