@@ -1,12 +1,14 @@
 .card-trip {
   overflow: hidden;
-  background: $light-blue;
+  background: rgba(229, 229, 229, 1);
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   border-radius: 10px;
+  width: 300px;
+  height: 400px;
 }
 
 .card-trip > a > img {
-  height: 250px;
+  height: 180px;
   width: 100%;
   object-fit: cover;
   transition: 0.1s;
@@ -46,8 +48,50 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(3,1fr);
   grid-row-gap: 2em;
   grid-column-gap: 1em;
+  margin-bottom:3em;
+}
 
+.rvp-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-row-gap: 2em;
+  margin-bottom:3em;
+  justify-items: center;
+
+}
+
+.card-location {
+  align-self: flex-end;
+}
+
+.card-rvp-info {
+  width: 100%;
+  tbody {
+  // width: 100%;
+
+  }
+}
+
+.horizontal-card {
+  border: solid 1px rgba(0,0,0,0.2);
+  display:flex;
+  // width: 100%;
+  justify-items: space-between;
+  margin-bottom: 2em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.table-head {
+  border-bottom: solid 1px rgba(0,0,0,0.2);
+  font-size: 24px;
+  color: $blue;
+}
+.horizontal-card-price {
+  font-weight: bold;
+  font-size: 24px;
+  color: $red;
 }
