@@ -4,7 +4,7 @@ class ToolsController < ApplicationController
 
   def index
     if params[:query].present?
-      @tools = policy_scope(Tool).where(title: params[:query])
+      @tools = policy_scope(Tool).where("title ILIKE ?", "%#{params[:query]}%")
     else
       @tools = policy_scope(Tool).order(created_at: :desc)
     end
