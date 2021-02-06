@@ -1,15 +1,21 @@
 <div class="show-wrapper">
-<br>
+  <br>
   <div class="show-head">
   <h1><%= @tool.title.capitalize %></h1>
   <br>
   </div>
 
-
   <div class="show-grid">
-      <div class="">
-        <div style="height: 50%"> <%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %></div>
-        <div id="map"
+    <div class="">
+      <div style="height: 50%">
+        <% if @tool.photo.attached? %>
+          <%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= cl_image_tag "tool_default_show.jpg" %>
+        <% end %>
+      </div>
+
+      <div id="map"
      style="width: 100%; height: 50%;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
