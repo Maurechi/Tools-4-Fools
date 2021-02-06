@@ -5,6 +5,7 @@
   border-radius: 10px;
   width: 300px;
   height: 400px;
+  position:relative;
 }
 
 .card-trip > a > img {
@@ -23,6 +24,12 @@
   margin: 0;
 }
 
+.card-trip h3 {
+  font-weight: bold ;
+  font-size: 24px ;
+  color: $red ;
+}
+
 .card-trip p {
   font-size: 12px;
   opacity: .7;
@@ -34,7 +41,6 @@
   padding: 12px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   position: relative;
   border-top: 1px dotted rgba(0,0,0,0.2);
 }
@@ -63,9 +69,13 @@ align-self: flex-start;
 
 }
 
-.card-location {
-  align-self: flex-end;
+.card-title {
+  color: $blue;
 }
+
+// .card-location {
+//   align-self: flex-end;
+// }
 
 .card-rvp-info {
   width: 100%;
@@ -91,8 +101,25 @@ align-self: flex-start;
   font-size: 24px;
   color: $blue;
 }
+
+
+.card-bottom {
+  position: absolute;
+  bottom: 30px;
+  right: 12px;
+  i {
+  color: $blue;
+  font-size: 1.3em;
+  }
+  p {
+  color: $blue;
+  opacity: 1;
+  display: inline;
+  }
+}
+
 .card-price {
-  font-weight: bold;
-  font-size: 24px;
-  color: $red;
+  font-weight: bold ;
+  font-size: 24px ;
+  color: $red ;
 }

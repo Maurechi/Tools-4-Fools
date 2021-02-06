@@ -28,7 +28,7 @@
 
   <div class="cards-grid">
     <% @tools.each do |tool| %>
-      <div class="card-trip">
+    <div class="card-trip">
         <%= link_to tool_path(tool) do  %>
           <% if tool.photo.attached? %>
             <%= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill %>
@@ -36,20 +36,20 @@
             <%= cl_image_tag "tool_default_index.jpg" %>
           <% end %>
         <% end %>
-
-      <div class="card-trip-infos">
-
-        <div>
-          <h2 class=""><%=tool.title.capitalize  %></h2>
-          <p><%= tool.description %></p>
+        <div class="card-trip-infos">
+          <div>
+            <h2 class="card-title"><%=tool.title.capitalize  %></h2>
+            <br>
+            <p><%= tool.description %></p>
+          </div>
+          <div>
+            <h3 class="price center">€<%=tool.price  %>/day</h3>
+          </div>
         </div>
-        <div>
-          <h2 class="card-price center">€<%=tool.price  %>/day</h2>
-          <p><strong><%= tool.address.capitalize %></strong></p>
-        </div>
-
-
-        </div>
+          <div class="card-bottom">
+            <p><strong><%= tool.address.capitalize %></strong></p>
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
     </div>
     <% end %>
     <br>
