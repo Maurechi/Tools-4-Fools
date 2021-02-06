@@ -12,9 +12,11 @@
       </li>
     </ul>
   </div>
+  <%= link_to root_path do %>
   <div class="nav-center">
     <p>Tools<span style='font-size:1.5em; color: #CC1800'> 4 </span>Fools</p>
   </div>
+  <% end %>
   <div class="nav-right">
     <% if user_signed_in? %>
       <%= link_to 'My tools', reservations_path, class: 'button-red mr-3' %>
