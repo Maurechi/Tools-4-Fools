@@ -6,7 +6,7 @@
       <%= form_tag tools_path, method: :get, class: "form-inline d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control flex-fill",
+        class: "form-control flex-fill mr-1",
         placeholder: "Find a tool"
       %>
       <%= submit_tag "Search", class: "button-red" %>
